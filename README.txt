@@ -22,6 +22,8 @@ Instale as dependências:
 
 npm install
 
+npm install undici
+
 Inicie o servidor:
 
 npm run dev

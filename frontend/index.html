@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Biblioteca Cloud - projeto educacional para pesquisar livros usando JavaScript e Open Library.">
+  <meta name="description" content="Biblioteca Cloud - projeto educacional para pesquisar livros utilizando a Open Library.">
   <title>Biblioteca Cloud | Pesquisa de Livros</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -39,16 +39,15 @@
         <a href="#sobre">Sobre o Projeto</a>
         <a href="#como-funciona">Como Funciona</a>
         <a href="#tecnologias">Tecnologias</a>
-        <a href="#contato">Contato</a>
       </nav>
 
     </div>
   </header>
 
-
   <main id="inicio">
 
     <section class="hero">
+
       <div class="hero-conteudo">
 
         <div class="apresentacao">
@@ -60,24 +59,23 @@
           <h1>
             Pesquise livros em
             <span>tempo real</span>
-            com JavaScript
           </h1>
 
           <p class="descricao">
-            Projeto educacional que utiliza a Open Library
-            para pesquisar informações de livros por título.
+            Projeto educacional que utiliza um backend próprio para consultar
+            livros disponíveis na Open Library.
           </p>
 
           <div class="chips">
             <span>HTML5</span>
             <span>CSS3</span>
             <span>JavaScript</span>
-            <span>Fetch API</span>
-            <span>JSON</span>
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>Open Library</span>
           </div>
 
         </div>
-
 
         <section class="card-consulta">
 
@@ -86,8 +84,7 @@
             <h2>Pesquisar livro</h2>
           </div>
 
-
-          <form id="formPesquisa">
+          <form id="formLivro">
 
             <label for="titulo">
               Digite o título do livro
@@ -108,12 +105,18 @@
 
             </div>
 
-            <p id="mensagem" class="mensagem"></p>
+            <p
+              id="mensagem"
+              class="mensagem"
+              aria-live="polite"
+            ></p>
 
           </form>
 
-
-          <section id="resultado" class="resultado oculto">
+          <section
+            id="resultado"
+            class="resultado oculto"
+          >
 
             <div class="resultado-cabecalho">
 
@@ -122,47 +125,35 @@
                   Resultado da pesquisa
                 </p>
 
-                <h3>Livro encontrado</h3>
+                <h3>
+                  Livros encontrados
+                </h3>
               </div>
 
-              <span class="resultado-icone">⌕</span>
+              <span class="resultado-icone">
+                ☰
+              </span>
 
             </div>
 
-
-            <div class="dados">
-
-              <div class="dado dado-maior">
-                <span>Título</span>
-                <strong id="tituloResultado">-</strong>
-              </div>
-
-              <div class="dado">
-                <span>Autor</span>
-                <strong id="autorResultado">-</strong>
-              </div>
-
-              <div class="dado">
-                <span>Ano</span>
-                <strong id="anoResultado">-</strong>
-              </div>
-
-              <div class="dado dado-maior">
-                <span>Chave</span>
-                <strong id="chaveResultado">-</strong>
-              </div>
-
-            </div>
+            <div
+              id="listaLivros"
+              class="dados"
+            ></div>
 
           </section>
 
+          <div
+            id="estadoInicial"
+            class="estado-inicial"
+          >
 
-          <div id="estadoInicial" class="estado-inicial">
-
-            <span class="estado-icone">▤</span>
+            <span class="estado-icone">
+              ◫
+            </span>
 
             <p>
-              Digite o título de um livro acima para iniciar a pesquisa.
+              Digite o título de um livro para iniciar a pesquisa.
             </p>
 
           </div>
@@ -170,41 +161,59 @@
         </section>
 
       </div>
+
     </section>
 
-
-    <section id="sobre" class="beneficios secao-largura">
+    <section
+      id="sobre"
+      class="beneficios secao-largura"
+    >
 
       <article>
         <span class="beneficio-icone">⚡</span>
+
         <h3>Rápido</h3>
-        <p>Pesquisa livros por título de forma simples.</p>
+
+        <p>
+          Pesquise livros utilizando dados da Open Library.
+        </p>
       </article>
 
       <article>
         <span class="beneficio-icone">✓</span>
-        <h3>Informativo</h3>
-        <p>Exibe título, autor e ano de publicação.</p>
+
+        <h3>Organizado</h3>
+
+        <p>
+          Backend separado em rotas, controllers e services.
+        </p>
       </article>
 
       <article id="como-funciona">
         <span class="beneficio-icone">&lt;/&gt;</span>
-        <h3>Moderno</h3>
-        <p>Desenvolvido utilizando JavaScript, Fetch API e JSON.</p>
+
+        <h3>API</h3>
+
+        <p>
+          O frontend se comunica somente com o backend da aplicação.
+        </p>
       </article>
 
       <article>
         <span class="beneficio-icone">☁</span>
-        <h3>Em Nuvem</h3>
-        <p>Preparado para evoluir nas próximas etapas do projeto.</p>
+
+        <h3>Cloud</h3>
+
+        <p>
+          Projeto desenvolvido para praticar APIs e computação em nuvem.
+        </p>
       </article>
 
     </section>
 
   </main>
 
-
-  <footer id="contato" class="rodape">
+  <footer class="rodape">
 
     <div class="rodape-conteudo secao-largura">
 
@@ -220,12 +229,11 @@
         </div>
 
         <p>
-          Projeto educacional para aprender consumo de APIs
-          e computação em nuvem.
+          Projeto educacional de pesquisa de livros utilizando
+          JavaScript, Node.js e Open Library.
         </p>
 
       </div>
-
 
       <div class="rodape-coluna">
 
@@ -237,36 +245,34 @@
 
       </div>
 
-
-      <div id="tecnologias" class="rodape-coluna">
+      <div
+        id="tecnologias"
+        class="rodape-coluna"
+      >
 
         <h4>Tecnologias</h4>
 
         <span>HTML5</span>
         <span>CSS3</span>
         <span>JavaScript</span>
-        <span>Fetch API</span>
+        <span>Node.js</span>
+        <span>Express</span>
         <span>Open Library</span>
 
       </div>
-
 
       <div class="rodape-coluna">
 
         <h4>Sobre o Projeto</h4>
 
         <p>
-          Projeto de pesquisa de livros utilizando a API Open Library.
+          Aplicação criada para pesquisar livros através
+          de uma API própria integrada à Open Library.
         </p>
-
-        <a class="botao-github" href="#">
-          Ver no GitHub
-        </a>
 
       </div>
 
     </div>
-
 
     <div class="rodape-final">
 
@@ -275,13 +281,12 @@
       </span>
 
       <span>
-        Pesquisa de livros utilizando JavaScript.
+        Pesquisa de livros com Open Library
       </span>
 
     </div>
 
   </footer>
-
 
   <script src="script.js"></script>
 
