@@ -16,7 +16,7 @@ async function pesquisarLivros(titulo) {
   const tituloFormatado = encodeURIComponent(titulo);
 
   const resposta = await fetch(
-    `https://openlibrary.org/search.json?title=${tituloFormatado}&limit=5`,
+    `https://openlibrary.org/search.json?title=${tituloFormatado}&limit=1`,
     opcoes
   );
 
